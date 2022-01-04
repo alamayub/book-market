@@ -15,12 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cart & Order -->
+    <div class="cart__container" id="cart__container">cart container</div>
     <!-- header -->
     <header>
         <div class="container">
             <div class="logo">BM</div>
             <div class="menus">
-                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a href="#" id="cart__btn" onclick="view()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
     </header>
@@ -75,5 +77,30 @@
             <p><i class="fa fa-copyright" aria-hidden="true">2021 <b>Book Market</b></i></p>
         </div>
     </footer>
+    <script>
+        var books = []
+        function getBooks() {
+            // fetch('https://book-set-task.herokuapp.com/api/list_books').then( response => {
+            //     return response.json();
+            // }).then( json => {
+            //     books = json
+            //     console.log(json)
+            // }).catch( err => console.log('Fetch problem: ' + err.message))
+            fetch('https://book-set-task.herokuapp.com/api/list_books')
+                .then(res => res.json())
+                .then(data => books = data)
+        }
+        window.addEventListener('load', async () => { 
+            await getBooks() 
+            books.forEach(element => {
+                console.log(element)
+            });
+            console.log()
+        })
+        function view() {
+            let x = document.getElementById('cart__container')
+            x.style.transform = 'translateX(0%)'
+        }
+    </script>
 </body>
 </html>
