@@ -22,12 +22,14 @@
         <div class="container">
             <div class="logo">BM</div>
             <div class="menus">
-                <a href="#" id="cart__btn" onclick="view()"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                <a href="#" id="cart__btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             </div>
         </div>
     </header>
     <!-- section body -->
-    <section>section</section>
+    <section>
+        <div class="container books"></div>
+    </section>
     <!-- footer -->
     <footer>
         <div class="container" style="margin-bottom: 25px;">
@@ -77,30 +79,6 @@
             <p><i class="fa fa-copyright" aria-hidden="true">2021 <b>Book Market</b></i></p>
         </div>
     </footer>
-    <script>
-        var books = []
-        function getBooks() {
-            // fetch('https://book-set-task.herokuapp.com/api/list_books').then( response => {
-            //     return response.json();
-            // }).then( json => {
-            //     books = json
-            //     console.log(json)
-            // }).catch( err => console.log('Fetch problem: ' + err.message))
-            fetch('https://book-set-task.herokuapp.com/api/list_books')
-                .then(res => res.json())
-                .then(data => books = data)
-        }
-        window.addEventListener('load', async () => { 
-            await getBooks() 
-            books.forEach(element => {
-                console.log(element)
-            });
-            console.log()
-        })
-        function view() {
-            let x = document.getElementById('cart__container')
-            x.style.transform = 'translateX(0%)'
-        }
-    </script>
 </body>
+<script src="index.js"></script>
 </html>
