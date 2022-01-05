@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; 
+  text-decoration: none;
+  letter-spacing: .75px; 
+  font-family: 'Roboto', sans-serif;
+}
+::-webkit-scrollbar { display: none; }
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: $padding;  
+}
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+p {
+  display: block;
+  font-size: 13px;
+}

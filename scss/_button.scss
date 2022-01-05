@@ -1,0 +1,17 @@
+%btn {  
+  display: inline-block;
+  border-radius: 6px;  
+  padding: 8px 20px;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;  
+  transition: ease-in-out 250ms;
+  text-transform: capitalize;
+}
+
+.btn-primary {
+  @extend %btn;
+  background-color: $primary-color;  
+  &:hover { background-color: lighten($color: $primary-color, $amount: 5%); }
+}

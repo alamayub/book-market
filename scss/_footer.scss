@@ -1,0 +1,64 @@
+footer {
+  box-shadow: 0 2px 10px 0 $primary-color;
+  padding: 30px 0;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  }
+  .logo span {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .link__title {
+    line-height: 1;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  .company {
+    .link__items {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 4px;
+      a {
+        color: $primary-color;
+        font-size: 13px;
+      }
+    }
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6px;
+    div {
+      display: flex;
+      grid-gap: 6px;
+    }
+  }
+  .social {
+    display: flex;
+    grid-gap: 6px;
+    margin-top: 10px;
+    a {
+      height: 24px;
+      width: 24px;
+      color: $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      i { transition: ease-in-out 250ms; }
+      &:hover i { transform: scale(1.2); }
+    }
+  }
+}
+.copyright {
+  padding-top: 30px;
+  border-top: .5px solid $border-color;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  footer .container { grid-template-columns: repeat(auto-fit, minmax(48%, 1fr)); grid-gap: 12px; }
+}

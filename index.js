@@ -23,7 +23,7 @@ function getBooks() {
           <div class="genre">${gd}</div>
           <div class="book__title">
             <span>${book.name}</span>
-            <span>${book.price}</span>
+            <span>${convertCurrency(book.price)}</span>
           </div>
           <p>Author:- ${book.author}</p>
           <p>Date:- ${convertDate(book.published_date)}</p>  
@@ -44,4 +44,8 @@ document.getElementById('cart__btn').addEventListener('click', () => {
 // convert date
 function convertDate(date) {
   return date.split('/').reverse().join('-')
+}
+// convert currentcy
+function convertCurrency(dollar) {
+  return (parseFloat(dollar.slice(1, dollar.length))* 120).toFixed(2)
 }
