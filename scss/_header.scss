@@ -10,4 +10,11 @@ header {
     font-weight: bold;
     line-height: 1;
   }
+  .menus button {
+    @extend %btn;
+    padding: 0 !important;
+    height: 28px;
+    width: 28px;
+    background-color: lighten($color: $amber-color, $amount: 10%);
+  }
 }

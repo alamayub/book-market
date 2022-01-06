@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/> -->
-    <title>Book Market - Your Online Library</title>
+    <title>BM - Order</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/index.css">
     <!-- Font Awesome Icons -->
@@ -14,17 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- loader -->
-    <div class="loader" id="loader">Loading....</div>
-    <!-- Cart & Order -->
-    <div class="cart__container" id="cart__container">
-        <div class="cart__title">
-            <span>Cart Items</span>
-            <button id="close__cart"><i class="fa fa-close" aria-hidden="true"></i></button>
-        </div>
-        <div class="cart__items" id="cartItems"></div>
-        <a href="order.html">Order Now</a>
-    </div>
     <!-- header -->
     <header>
         <div class="container">
@@ -36,9 +24,20 @@
     </header>
     <!-- section body -->
     <section>
-        <div class="container">
-            <div class="category"></div>
-            <div class="books"></div>
+        <div class="container order__container">
+            <h3>Shipping & Billing Information</h3>
+            <form name="form" onsubmit="return submit()">
+                <input type="text" placeholder="Full Name" id="name">
+                <div class="form__div">
+                    <input type="text" placeholder="Billing Address" id="billingAddress">
+                    <input type="text" placeholder="Delivery Address" id="deliveryAddress">
+                </div>
+                <div class="form__div">
+                    <input type="number" id="mobile" placeholder="Mobile Number">
+                    <input type="date" id="date" placeholder="Current Date">
+                </div>
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </section>
     <!-- footer -->
@@ -91,5 +90,5 @@
         </div>
     </footer>
 </body>
-<script src="js/index.js"></script>
+<script src="js/order.js"></script>
 </html>
